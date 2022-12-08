@@ -29,7 +29,7 @@ public class QuizGame {
     	}
     }
 
-	/*public String getPlayerName() {
+	public String getPlayerName() {
         return playerName;
     }
 
@@ -117,5 +117,5 @@ public class QuizGame {
 			e.printStackTrace();
 		}
 		return Answers;
-	}*/
+	}
 }
