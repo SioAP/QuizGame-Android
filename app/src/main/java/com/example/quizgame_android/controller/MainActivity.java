@@ -16,18 +16,24 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        try {
+            Controller leController = new Controller();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @SuppressLint("MissingInflatedId")
-    public void clickSolo(View view) throws Exception {
-        Controller leController = new Controller();
+    public void clickSolo(View view) {
 
         EditText aText = (EditText)findViewById(R.id.txtName);
         String aName = aText.getText().toString();
 
-        leController.getMyGame().setPlayerName(aName);
-        setContentView(R.layout.activity_question);
+        //leUser.setName(aName);
 
-        TextView aTxtV = (TextView)findViewById(R.id.total_question);
+        //leController.getMyGame().setPlayerName(aName);
+        if (!aName.equals("")) {
+            setContentView(R.layout.activity_question);
+        }
     }
 }

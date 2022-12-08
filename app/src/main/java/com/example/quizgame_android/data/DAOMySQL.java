@@ -22,16 +22,12 @@ public class DAOMySQL {
 	}
 
 	public boolean connectDatabase() throws Exception {
-		Properties props = new Properties();
-		try (FileInputStream fis = new FileInputStream("conf.properties")) {
-			props.load(fis);
-		}
-		String url = props.getProperty("jdbc.url");
-		String login = props.getProperty("jdbc.login");
-		String password = props.getProperty("jdbc.password");
+		String url = "jdbc:mysql://localhost:3306/quiz_db";
+		String login = "root";
+		String password = "root";
 		try {
 			//1-load the driver
-			Class.forName(props.getProperty("jdbc.driver.class"));
+			Class.forName("com.mysql.cj.jdbc.Driver");
 			//2- create a connection - a plug on driver
 			this.cnx = DriverManager.getConnection(url, login, password);
 			//3- connect a wire - the statement
