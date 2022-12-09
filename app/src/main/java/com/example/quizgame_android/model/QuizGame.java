@@ -11,15 +11,11 @@ public class QuizGame {
 
 	//specifications
 	private final Controller myController;
-	private String playerName;
-    private int playerScore;
     private ArrayList<Question> myQuestions;
-    //private Controller myController;
 
     //implementation
     public QuizGame(Controller aController) {
     	this.myController = aController;
-    	this.playerScore = 0;
     	this.myQuestions = new ArrayList<Question>();
     	
     	for (int i=0; i < 4; i++) {
@@ -29,32 +25,12 @@ public class QuizGame {
     	}
     }
 
-	public String getPlayerName() {
-        return playerName;
-    }
-
-    public void setPlayerName(String playerName) {
-        this.playerName = playerName;
-    }
-
-    public int getPlayerScore() {
-        return playerScore;
-    }
-
-    public void setPlayerScore(int playerScore) {
-        this.playerScore = playerScore;
-    }
-
     public ArrayList<Question> getQuestions() {
         return myQuestions;
     }
 
     public void setQuestions(ArrayList<Question> questions) {
         this.myQuestions = questions;
-    }
-
-    public void addPlayerScore(int playerScore) {
-        this.playerScore += playerScore;
     }
 
     
